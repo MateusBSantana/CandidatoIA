@@ -63,10 +63,10 @@ while(mais_requisito == 0):
         novo_requisito = novo_requisito.strip()
     prioridade_requisito = ""
     while(prioridade_requisito != "obrigatório") and (prioridade_requisito != "desejável"):
-        prioridade_requisito = int(input("Digite 1 para obrigatório ou 2 - desejável! Qual a prioridade do seu requisito: "))
-        if(prioridade_requisito == 1):
+        entrada_numero_requisito = int(input("Digite 1 para obrigatório ou 2 - desejável! Qual a prioridade do seu requisito: "))
+        if(entrada_numero_requisito == 1):
             prioridade_requisito = "obrigatório"
-        elif(prioridade_requisito == 2):
+        elif(entrada_numero_requisito == 2):
             prioridade_requisito = "desejável"
         else:
             print("Numerão incorreta")
