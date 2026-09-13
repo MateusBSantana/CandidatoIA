@@ -1,4 +1,4 @@
-import json, sqlite3, datetime
+import json, sqlite3, datetime, os
 from dotenv import load_dotenv
 
 # Estas listas guardam as habilidades encontradas ou nao encontradas na vaga.
@@ -19,6 +19,14 @@ sql_insere_requisito = "INSERT INTO requisitos (requisito) VALUES (?);"
 sql_insere_requisito_vaga  = "INSERT INTO requisito_vaga(fk_vaga, fk_requisito, prioridade) VALUES (?, ?, ?);"
 sql_insere_candidatura = "INSERT INTO candidaturas(fk_vaga, data_candidatura, aderencia) VALUES (?, ?, ?);"
 sql_insere_requisito_candidatura = "INSERT INTO requisitos_candidatura(fk_candidatura, fk_requisito, requisito_cumprido) VALUES (?, ?, ?)"
+
+load_dotenv()
+api_key = os.getenv("OPENROUTER_API_KEY")
+
+if api_key is None:
+    print("Chave Não encontrada")
+else:
+    print("Chave encontrada")
 
 # Aqui sao pedidos os dados principais da vaga.
 nome_vaga = input("Digite o nome da vaga: ")
